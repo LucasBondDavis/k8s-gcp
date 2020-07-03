@@ -15,6 +15,8 @@ before_install:
   - gcloud config set compute/zone us-west1-a
   - gcloud container clusters get-credentials mult-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+script:
+  - echo hello
 deploy:
   provider: script
   script: bash ./deploy.sh
